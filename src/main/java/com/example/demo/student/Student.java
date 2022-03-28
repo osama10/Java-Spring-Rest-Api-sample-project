@@ -28,7 +28,6 @@ public class Student {
                    String email,
                    LocalDate date,
                    Integer age) {
-        this.id = id;
         this.name = name;
         this.email = email;
         this.date = date;
