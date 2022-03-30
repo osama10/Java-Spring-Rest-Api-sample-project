@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StudentService {
@@ -24,13 +25,13 @@ public class StudentService {
     }
 
     public void createStudent(Student student) {
-        System.out.println(student);
+        Optional<Student> optionalStudent = studentRepository.findStudentByEmail(student.getEmail());
+
+        if (optionalStudent.isPresent()) {
+            throw  new IllegalArgumentException("Email already present");
+        }
+
+        studentRepository.save(student);
     }
 
-    /*
-    List.of(
-                new Student(1L, "Osama",  "osama@yahoo.com", LocalDate.of(1995, 12, 10), 25),
-                new Student(2L, "Shazeen",  "shzeen@yahoo.com", LocalDate.of(1996, 06, 13), 24)
-        );
-     */
 }
