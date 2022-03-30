@@ -23,6 +23,10 @@ public class StudentService {
         return studentRepository.findAll();
     }
 
+    public void createStudent(Student student) {
+        System.out.println(student);
+    }
+
     /*
     List.of(
                 new Student(1L, "Osama",  "osama@yahoo.com", LocalDate.of(1995, 12, 10), 25),
