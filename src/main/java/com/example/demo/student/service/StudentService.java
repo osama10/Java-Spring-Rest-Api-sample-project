@@ -40,15 +40,13 @@ public class StudentService {
         }
 
         studentRepository.deleteById(id);
-
     }
 
     @Transactional
     public void updateStudent(Long id, Optional<String> name, Optional<String> email) {
-        Student student = studentRepository.findById(id)
-                .orElseThrow(
-                        () -> new IllegalArgumentException("Student of Id" + id + " doesn't exist")
-                );
+        Student student = studentRepository
+                .findById(id)
+                .orElseThrow( () -> new IllegalArgumentException("Student of Id" + id + " doesn't exist"));
 
         if (name.isPresent()
                 && !name.get().isEmpty()
@@ -67,7 +65,6 @@ public class StudentService {
 
             student.setEmail(email.get());
         }
-
     }
 
 
