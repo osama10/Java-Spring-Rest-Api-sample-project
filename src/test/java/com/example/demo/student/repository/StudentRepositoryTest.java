@@ -40,7 +40,7 @@ class StudentRepositoryTest {
     }
 
     @Test
-    void test_whenCorrectEmailIsPassedToRepo_thenItShowsStudentDoesntExist() {
+    void test_whenCorrectEmailIsPassedToRepo_thenItShowsStudentDoesnotExist() {
         // given
         String email = "osama1@yahoo.com";
         Student student = new Student("Osama",
