@@ -3,12 +3,9 @@ package com.example.demo.student.service;
 import com.example.demo.student.model.Student;
 import com.example.demo.student.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.sql.Struct;
-import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,9 +24,8 @@ public class StudentService {
     }
 
     public void createStudent(Student student) {
-        Optional<Student> optionalStudent = studentRepository.findStudentByEmail(student.getEmail());
-
-        if (optionalStudent.isPresent()) {
+        Boolean studentExists = studentRepository.existsStudentByEmail(student.getEmail());
+        if (studentExists) {
             throw  new IllegalArgumentException("Email already present");
         }
 

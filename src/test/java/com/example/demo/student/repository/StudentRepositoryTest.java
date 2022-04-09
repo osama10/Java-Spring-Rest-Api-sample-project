@@ -7,9 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import java.time.LocalDate;
-import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.*;
 
 @DataJpaTest
 class StudentRepositoryTest {
@@ -33,14 +32,16 @@ class StudentRepositoryTest {
         sut.save(student);
 
         // when
-        Optional<Student> optionalStudent = sut.findStudentByEmail(email);
+        Boolean studentExists = sut.existsStudentByEmail(student.getEmail());
 
         // then
-        assertTrue(optionalStudent.isPresent());
+        assertThat(studentExists)
+                .isTrue();
+
     }
 
     @Test
-    void test_whenCorrectEmailIsPassedToRepo_thenItShowsStudentDoesnotExist() {
+    void test_whenInCorrectEmailIsPassedToRepo_thenItShowsStudentDoesnotExist() {
         // given
         String email = "osama1@yahoo.com";
         Student student = new Student("Osama",
@@ -50,9 +51,10 @@ class StudentRepositoryTest {
         sut.save(student);
 
         // when
-        Optional<Student> optionalStudent = sut.findStudentByEmail(email);
+        Boolean studentExists = sut.existsStudentByEmail(email);
 
         // then
-        assertFalse(optionalStudent.isPresent());
+        assertThat(studentExists)
+                .isFalse();
     }
 }
