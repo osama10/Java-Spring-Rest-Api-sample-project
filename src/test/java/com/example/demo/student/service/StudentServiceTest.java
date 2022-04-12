@@ -138,7 +138,6 @@ class StudentServiceTest {
     }
 
     @Test
-    @Disabled
     void test_whenUpdateIsCalledEmailThatDoesntExist_studentServiceThrowsError() {
         Student student = new Student("Osama",
                 "osama@yahoo.com",
@@ -150,7 +149,7 @@ class StudentServiceTest {
                 .willReturn(Optional.of(student));
 
         given(studentRepository.existsById(studentId))
-                .willReturn(false);
+                .willReturn(true);
 
         assertThatThrownBy(() -> sut.updateStudent(studentId, Optional.empty(), Optional.of(newEmail)))
                 .isInstanceOf(IllegalArgumentException.class)
