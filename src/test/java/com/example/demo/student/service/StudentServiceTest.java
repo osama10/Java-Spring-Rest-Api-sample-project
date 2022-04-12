@@ -137,7 +137,6 @@ class StudentServiceTest {
     }
 
     @Test
-    @Disabled
     void test_whenUpdateIsCalledEmailThatDoesntExist_studentServiceThrowsError() {
         Student student = new Student("Osama",
                 "osama@yahoo.com",
