@@ -149,7 +149,7 @@ class StudentServiceTest {
                 .willReturn(Optional.of(student));
 
         given(studentRepository.existsById(studentId))
-                .willReturn(true);
+                .willReturn(false);
 
         assertThatThrownBy(() -> sut.updateStudent(studentId, Optional.empty(), Optional.of(newEmail)))
                 .isInstanceOf(IllegalArgumentException.class)
