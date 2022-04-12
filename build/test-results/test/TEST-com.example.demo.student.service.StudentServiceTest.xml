@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.example.demo.student.service.StudentServiceTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2022-04-09T16:18:21" hostname="HFAdmins-MBP" time="0.986">
+<testsuite name="com.example.demo.student.service.StudentServiceTest" tests="8" skipped="1" failures="0" errors="0" timestamp="2022-04-12T13:17:17" hostname="HFAdmins-MBP" time="0.133">
   <properties/>
-  <testcase name="test_whenDeleteIsCalledWithWrongStudentId_studentServiceThrowsError()" classname="com.example.demo.student.service.StudentServiceTest" time="0.949"/>
-  <testcase name="test_whenAStudentWithAlreadyExistedEmailIsCreated_serviceWillThrowError()" classname="com.example.demo.student.service.StudentServiceTest" time="0.01"/>
-  <testcase name="test_whenUpdateIsCalledEmailThatDoesntExist_studentServiceThrowsError()" classname="com.example.demo.student.service.StudentServiceTest" time="0.004"/>
-  <testcase name="getStudents()" classname="com.example.demo.student.service.StudentServiceTest" time="0.003"/>
-  <testcase name="test_whenUpdateIsCalledWithNewEmail_studentServiceUpdatesTheName()" classname="com.example.demo.student.service.StudentServiceTest" time="0.007"/>
-  <testcase name="test_whenUpdateIsCalledWithNewName_studentServiceUpdatesTheName()" classname="com.example.demo.student.service.StudentServiceTest" time="0.002"/>
+  <testcase name="test_whenDeleteIsCalledWithWrongStudentId_studentServiceThrowsError()" classname="com.example.demo.student.service.StudentServiceTest" time="0.108"/>
+  <testcase name="test_whenAStudentWithAlreadyExistedEmailIsCreated_serviceWillThrowError()" classname="com.example.demo.student.service.StudentServiceTest" time="0.007"/>
+  <testcase name="test_whenUpdateIsCalledEmailThatDoesntExist_studentServiceThrowsError()" classname="com.example.demo.student.service.StudentServiceTest" time="0.001">
+    <skipped/>
+  </testcase>
+  <testcase name="getStudents()" classname="com.example.demo.student.service.StudentServiceTest" time="0.002"/>
+  <testcase name="test_whenUpdateIsCalledWithNewEmail_studentServiceUpdatesTheName()" classname="com.example.demo.student.service.StudentServiceTest" time="0.005"/>
+  <testcase name="test_whenUpdateIsCalledWithNewName_studentServiceUpdatesTheName()" classname="com.example.demo.student.service.StudentServiceTest" time="0.001"/>
   <testcase name="test_whenANewStudentIsPassed_StudentIsCreatedByStudentService()" classname="com.example.demo.student.service.StudentServiceTest" time="0.003"/>
-  <testcase name="test_whenDeleteIsCalledWithCorrectStudentId_studentServiceDeletesStudent()" classname="com.example.demo.student.service.StudentServiceTest" time="0.004"/>
+  <testcase name="test_whenDeleteIsCalledWithCorrectStudentId_studentServiceDeletesStudent()" classname="com.example.demo.student.service.StudentServiceTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
